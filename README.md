@@ -25,6 +25,8 @@ download agnews, dbpedia and amazon (optionally yelp, imbd) from https://github.
 
 Yahoo answers from https://www.kaggle.com/datasets/soumikrakshit/yahoo-answers-dataset
 
+Our label names are in folder data_prompt.
+
 
 # Reference scripts for experiments
 We provide reference scripts for datasets with multiple classes, which may require more hyperparam tuning compared with binary sentiment classification (Yelp, IMDB or Amazon).
