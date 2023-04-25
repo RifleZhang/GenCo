@@ -11,7 +11,7 @@ def do_setup():
         version="0.0.1",
         packages=find_packages(
             include=[
-               "xmclib",
+               "genco",
             ]
         )
     )
