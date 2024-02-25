@@ -71,4 +71,14 @@ bash scripts/genco/cond_aug_selflearn.sh 0,1 $data_name 1500 t0.8ins
 ```
 
 # Citation
-To be added
+EACL 2024
+```
+@misc{zhang2023generationdriven,
+      title={Generation-driven Contrastive Self-training for Zero-shot Text Classification with Instruction-tuned GPT}, 
+      author={Ruohong Zhang and Yau-Shian Wang and Yiming Yang},
+      year={2023},
+      eprint={2304.11872},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
