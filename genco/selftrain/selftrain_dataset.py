@@ -10,15 +10,13 @@ from transformers import RobertaTokenizer,RobertaTokenizerFast
 from collections import Counter
 import json
 import pickle
-import scipy.sparse as smat
 from collections import defaultdict
-from scipy.spatial.distance import cosine
 from transformers import AutoTokenizer
 from torch.utils.data import Dataset
 import pandas as pd
 from logzero import logger
 
-from xmclib.utils.data_utils import load_data, save_data, load_json, save_json, load_jsonl, save_jsonl
+from genco.utils.data_utils import load_data, save_data, load_json, save_json, load_jsonl, save_jsonl
 from datasets import load_dataset, Dataset, disable_caching
 from torch.utils.data import IterableDataset, get_worker_info
 

@@ -114,17 +114,21 @@ def load_and_cache_large_model(model_name, cache_dir, device):
 def load_gen_model(model_args, large_model=False, device="cuda", margs={}):
     cache_dir = model_args.cache_dir
     gen_model_name = model_args.gen_model_name
+    
+    from transformers import LlamaTokenizer 
+    gen_tokenizer = LlamaTokenizer.from_pretrained(gen_model_name, cache_dir=cache_dir)
+
     if large_model:
         gen_model = load_and_cache_large_model(gen_model_name, cache_dir=cache_dir, device=device)
     else:
         #margs = {"revision": "float16", "torch_dtype": torch.float16, "low_cpu_mem_usage": True}
         gen_model = load_and_cache_model(gen_model_name, cache_dir=cache_dir, margs=margs)
         gen_model = gen_model.to(device)
-    if "llama" in gen_model_name:
-        from transformers import LlamaTokenizer 
-        gen_tokenizer = LlamaTokenizer.from_pretrained(gen_model_name, cache_dir=cache_dir)
-    else:
-        gen_tokenizer = AutoTokenizer.from_pretrained(gen_model_name, cache_dir=cache_dir)
+    # if "llama" in gen_model_name:
+    #     from transformers import LlamaTokenizer 
+    #     gen_tokenizer = LlamaTokenizer.from_pretrained(gen_model_name, cache_dir=cache_dir)
+    # else:
+    #     gen_tokenizer = AutoTokenizer.from_pretrained(gen_model_name, cache_dir=cache_dir)
     return gen_model, gen_tokenizer
 
 def load_model(model_args, large_model=False, device="cuda", gen_device="cuda", dtype=torch.float32):

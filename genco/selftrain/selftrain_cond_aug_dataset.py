@@ -6,12 +6,10 @@ import math, copy, time
 import os, os.path as osp
 from tqdm import tqdm
 import sys
-from transformers import RobertaTokenizer,RobertaTokenizerFast
 from collections import Counter
 import json
 import pickle
 from collections import defaultdict
-from scipy.spatial.distance import cosine
 from transformers import AutoTokenizer
 from torch.utils.data import Dataset
 import pandas as pd

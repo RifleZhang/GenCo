@@ -55,6 +55,8 @@ def generate_from_dataset(
             process_index=args.process_index
         )
         save_path = save_path + f".{args.process_index}"
+    else:
+        save_path = save_path + f".0"
     total_iters = len(dataset) // args.per_device_eval_batch_size
     dataloader = DataLoader(
         dataset,
